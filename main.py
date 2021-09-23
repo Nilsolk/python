@@ -1,4 +1,4 @@
-from pprint import pprint
+
 #ПДО 21 Гурьянов А.С
 # Task1
 # n = int(input())
