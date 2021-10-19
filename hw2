@@ -46,10 +46,6 @@ k_list = [
 # print(s)
 
 
-
-
-
-
 # task4*
 today = '01.10.2021'
 newdic = {}
@@ -58,34 +54,20 @@ for m, i, k, t, j in k_list:
     v = list(map(int, t.split(':')))
     if v[1] <= a[1]:
         if v[0] <= v[0]:
-            # print(f'{i} {k}:{(a[2] - v[2])+1}')
+            print(f'{i} {k}:{(a[2] - v[2])+1}')
             newdic[i + k] = (a[2] - v[2]) + 1
 
 
     else:
-        # print(f'{i} {k}:{(a[2] - v[2])}')
+        print(f'{i} {k}:{(a[2] - v[2])}')
         newdic[i + k] = (a[2] - v[2])
 
-
-
-
-
-
-
 # task4_1
-# for i in newdic:
-#     if newdic.get(i)==max(newdic.values()):
-#         print (f'{i} = {max(newdic.values())} years')
-
-
-
-
-
-
-
-
-# #task4_2
-# ls={}
+for i in newdic:
+    if newdic.get(i)==max(newdic.values()):
+        print (f'{i} = {max(newdic.values())} years')
+#task4_2
+ls={}
 list_1 = []
 for i in newdic:
     list_1.append(newdic.get(i))
