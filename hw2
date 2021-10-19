@@ -58,13 +58,13 @@ def task4_1():
         v = list(map(int, t.split(':')))
         if v[1] <= a[1]:
             if v[0] <= v[0]:
-                print(f'{i} {k}:{(a[2] - v[2])+1}')
-                newdic[i + k] = (a[2] - v[2]) + 1
+                print(f'{i} {k}:{(a[2] - v[2])}')
+                newdic[i + k] = (a[2] - v[2])
 
 
         else:
-            print(f'{i} {k}:{(a[2] - v[2])}')
-            newdic[i + k] = (a[2] - v[2])
+            print(f'{i} {k}:{(a[2] - v[2])-1}')
+            newdic[i + k] = (a[2] - v[2])-1
 
 
     for i in newdic:
@@ -97,4 +97,4 @@ def task4_1():
             newdic2[m[3]] = summ4
     print(newdic2)
 
-task2()
+task4_1()
