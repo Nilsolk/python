@@ -1,0 +1,111 @@
+k_list = [
+    ['krystal52@gmail.com', 'Paul', 'Parker', '16:01:1998', 'male'],
+    ['shawnjohnson@gmail.com', 'Kimberly', 'Diaz', '27:03:1996', 'male'],
+    ['ijames@gmail.com', 'Jennifer', 'Griffin', '09:10:1995', 'female'],
+    ['parsonsrichard@gmail.com', 'Robert', 'Harris', '15:09:1996', 'male'],
+    ['lbowers@gmail.com', 'Sherry', 'Ryan', '25:01:1997', 'female'],
+    ['elaine68@gmail.com', 'Scott', 'William', '15:06:1995', 'male'],
+    ['angela48@gmail.com', 'Katie', 'Bridges', '17:03:1995', 'female'],
+    ['carla93@gmail.com', 'Felicia', 'Martinez', '15:03:1998', 'female'],
+    ['williamsmark@gmail.com', 'James', 'Chung', '24:06:1995', 'male'],
+    ['stephanie49@gmail.com', 'Christopher', 'Barnes', '11:03:1997', 'male'],
+    ['ftaylor@gmail.com', 'Scott', 'White', '07:10:1996', 'male'],
+    ['ysolomon@gmail.com', 'Susan', 'Wallace', '12:01:1996', 'female'],
+    ['matthew22@gmail.com', 'Rebecca', 'Watson', '15:11:1997', 'female'],
+    ['robertmoore@gmail.com', 'Amanda', 'Harris', '21:10:1997', 'female'],
+    ['gregorygoodman@gmail.com', 'Robert', 'Lawson', '20:01:1997', 'male']
+]
+
+# task1
+# s1 = 0
+# s2 = 0
+# s3 = 0
+# for m ,i ,k ,t ,j in k_list:
+#  s1+=1
+#  if j== 'male':
+#         s2 += 1
+#  if j == 'female':
+#         s3 += 1
+# print(f'В группе всего {s1} человек, из них {s2} - парни, {s3} - девушки')
+
+
+# task2
+# for m ,i ,k ,t ,j in k_list:
+#  if j=='female':
+#   if i.startswith('A'):
+#    print (i,k)
+
+# task3
+# my_list = []
+# for m, i, k, t, j in k_list:
+#     my_list = t.split(':')
+#     if my_list[1] == '04':
+#         print(i, k, t)
+#     else:
+#         s = 'Таких студентов нет'
+# print(s)
+
+
+
+
+
+
+# task4*
+today = '01.10.2021'
+newdic = {}
+a = list(map(int, today.split('.')))
+for m, i, k, t, j in k_list:
+    v = list(map(int, t.split(':')))
+    if v[1] <= a[1]:
+        if v[0] <= v[0]:
+            # print(f'{i} {k}:{(a[2] - v[2])+1}')
+            newdic[i + k] = (a[2] - v[2]) + 1
+
+
+    else:
+        # print(f'{i} {k}:{(a[2] - v[2])}')
+        newdic[i + k] = (a[2] - v[2])
+
+
+
+
+
+
+
+# task4_1
+# for i in newdic:
+#     if newdic.get(i)==max(newdic.values()):
+#         print (f'{i} = {max(newdic.values())} years')
+
+
+
+
+
+
+
+
+# #task4_2
+# ls={}
+list_1 = []
+for i in newdic:
+    list_1.append(newdic.get(i))
+newdic2 = {}
+m = list(set(list_1))
+summ1 = 0
+summ2 = 0
+summ3 = 0
+summ4 = 0
+for i in list_1:
+    if i == m[0]:
+        summ1 += 1
+        newdic2[m[0]] = summ1
+    if i == m[1]:
+        summ2 += 1
+        newdic2[m[1]] = summ2
+    if i == m[2]:
+        summ3 += 1
+        newdic2[m[2]] = summ3
+    if i == m[3]:
+        summ4 += 1
+        newdic2[m[3]] = summ4
+print(newdic2)
