@@ -21,78 +21,80 @@ k_list = [
     ['hlopez@gmail.com', 'Julie', 'Jacobs', '13:07:1996', 'female']
 ]
 
-# task1
-# s1 = 0
-# s2 = 0
-# s3 = 0
-# for m ,i ,k ,t ,j in k_list:
-#  s1+=1
-#  if j== 'male':
-#         s2 += 1
-#  if j == 'female':
-#         s3 += 1
-# print(f'В группе всего {s1} человек, из них {s2} - парни, {s3} - девушки')
+def task1():
+    s1 = 0
+    s2 = 0
+    s3 = 0
+    for m ,i ,k ,t ,j in k_list:
+        s1+=1
+        if j== 'male':
+            s2 += 1
+        if j == 'female':
+            s3 += 1
+    print(f'В группе всего {s1} человек, из них {s2} - парни, {s3} - девушки')
 
 
-# task2
-# for m ,i ,k ,t ,j in k_list:
-#  if j=='female':
-#   if i.startswith('A'):
-#    print (i,k)
+def task2():
+    for m ,i ,k ,t ,j in k_list:
+        if j=='female':
+            if i.startswith('A'):
+                print (i,k)
 
-# task3
-# my_list = []
-# for m, i, k, t, j in k_list:
-#     my_list = t.split(':')
-#     if my_list[1] == '04':
-#         print(i, k, t)
-
-
+def task3():
+    my_list = []
+    for m, i, k, t, j in k_list:
+        my_list = t.split(':')
+        if my_list[1] == '04':
+            print(i, k, t)
 
 
-# task4*
-today = '01.10.2021'
-newdic = {}
-a = list(map(int, today.split('.')))
-for m, i, k, t, j in k_list:
-    v = list(map(int, t.split(':')))
-    if v[1] <= a[1]:
-        if v[0] <= v[0]:
-            print(f'{i} {k}:{(a[2] - v[2])+1}')
-            newdic[i + k] = (a[2] - v[2]) + 1
 
 
-    else:
-        print(f'{i} {k}:{(a[2] - v[2])}')
-        newdic[i + k] = (a[2] - v[2])
+def task4_1():
+    today = '01.10.2021'
+    newdic = {}
+    a = list(map(int, today.split('.')))
+    for m, i, k, t, j in k_list:
+        v = list(map(int, t.split(':')))
+        if v[1] <= a[1]:
+            if v[0] <= v[0]:
+                print(f'{i} {k}:{(a[2] - v[2])+1}')
+                newdic[i + k] = (a[2] - v[2]) + 1
 
-# task4_1
-for i in newdic:
-    if newdic.get(i)==max(newdic.values()):
-        print (f'{i} = {max(newdic.values())} years')
+
+        else:
+            print(f'{i} {k}:{(a[2] - v[2])}')
+            newdic[i + k] = (a[2] - v[2])
+
+
+    for i in newdic:
+        if newdic.get(i)==max(newdic.values()):
+            print (f'{i} = {max(newdic.values())} years')
 #task4_2
-ls={}
-list_1 = []
-for i in newdic:
-    list_1.append(newdic.get(i))
-newdic2 = {}
-m = list(set(list_1))
+    ls={}
+    list_1 = []
+    for i in newdic:
+        list_1.append(newdic.get(i))
+    newdic2 = {}
+    m = list(set(list_1))
 
-summ1 = 0
-summ2 = 0
-summ3 = 0
-summ4 = 0
-for i in list_1:
-    if i == m[0]:
-        summ1 += 1
-        newdic2[m[0]] = summ1
-    if i == m[1]:
-        summ2 += 1
-        newdic2[m[1]] = summ2
-    if i == m[2]:
-        summ3 += 1
-        newdic2[m[2]] = summ3
-    if i == m[3]:
-        summ4 += 1
-        newdic2[m[3]] = summ4
-print(newdic2)
+    summ1 = 0
+    summ2 = 0
+    summ3 = 0
+    summ4 = 0
+    for i in list_1:
+        if i == m[0]:
+            summ1 += 1
+            newdic2[m[0]] = summ1
+        if i == m[1]:
+            summ2 += 1
+            newdic2[m[1]] = summ2
+        if i == m[2]:
+            summ3 += 1
+            newdic2[m[2]] = summ3
+        if i == m[3]:
+            summ4 += 1
+            newdic2[m[3]] = summ4
+    print(newdic2)
+
+task2()
